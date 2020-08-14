@@ -1,22 +1,17 @@
-﻿// <copyright file="Feet.cs" company="BridgeLaz Solution">
-// Copyright (c) BridgeLaz Solution. All rights reserved.
+﻿// <copyright file="QuantityMeasurement.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
 namespace QuantityMeasurementProblem
 {
     /// <summary>
-    /// Feet Class.
+    /// Length Class.
     /// </summary>
-    public class Feet
+    public class QuantityMeasurement
     {
-        /// <summary>
-        /// Get Function To Return Feet Value.
-        /// </summary>
-        /// <param name="feet">Store Feet Value.</param>
-        /// <returns>Return Feet Value.</returns>
-        public double GetFeet(double feet)
+        public double UnitConversion(UnitType units, double value)
         {
-            return feet;
+            return value * units.value;
         }
 
         /// <summary>
