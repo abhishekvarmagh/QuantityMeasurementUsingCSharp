@@ -145,5 +145,62 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+
+
+        /// <summary>
+        /// Comparsion Check Given Zero Inch And Zero Feet Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenZeroInchAndZeroFeet_WhenZero_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 0.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 0.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given One Inch And One Feet Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenOneInchAndOneFeet_WhenEqualInLength_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 1.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 1.0);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given Zero Feet And Zero Inch Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenOneFeetAndOneFeet_WhenEqualInLength_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 1.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 1.0);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given One Feet And Twelve Inch Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenOneFeetAndTwelveInch_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 1.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 12.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given Twelve Inch And One Feet Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenTwelveInchAndOneFeet_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 12.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 1.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
