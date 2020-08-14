@@ -290,5 +290,38 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 3.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Given Zero Centimeter and Zero Centimeter Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenZeroCentimeterAndZeroCentimeter_WhenEqual_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Cm, 0.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Cm, 0.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Given Zero Centimeter and One Centimeter Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenZeroCentimeterAndOneCentimeter_WhenNotEqual_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Cm, 0.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Cm, 1.0);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Given Two Inch and Five Centimeter Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenTwoInchAndFiveCentimeter_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 2.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Cm, 5.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }

@@ -6,15 +6,17 @@ namespace QuantityMeasurementProblem
 {
     public class UnitType
     {
-        public static readonly UnitType Feet = new UnitType(12);
+        public static readonly UnitType Feet = new UnitType(12.0);
 
-        public static readonly UnitType Inch = new UnitType(1);
+        public static readonly UnitType Inch = new UnitType(1.0);
 
-        public static readonly UnitType Yard = new UnitType(36);
+        public static readonly UnitType Yard = new UnitType(36.0);
 
-        public int value;
+        public static readonly UnitType Cm = new UnitType(0.4);
 
-        public UnitType(int value)
+        public double value;
+
+        public UnitType(double value)
         {
             this.value = value;
         }
