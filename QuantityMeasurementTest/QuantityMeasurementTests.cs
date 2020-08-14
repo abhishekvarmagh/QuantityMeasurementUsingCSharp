@@ -72,5 +72,16 @@ namespace QuantityMeasurementTest
             QuantityMeasurementTests quantityMeasurementTest = new QuantityMeasurementTests();
             Assert.IsFalse(this.feetOne.Equals(quantityMeasurementTest));
         }
+
+        /// <summary>
+        /// Perform Test To Value Check For Equality.
+        /// </summary>
+        [Test]
+        public void GivenValue_WhenEqual_ShouldReturnEqual()
+        {
+            double value1 = this.feetOne.GetFeet(12.0);
+            double value2 = this.feetOne.GetFeet(12.0);
+            Assert.AreEqual(value1, value2);
+        }
     }
 }
