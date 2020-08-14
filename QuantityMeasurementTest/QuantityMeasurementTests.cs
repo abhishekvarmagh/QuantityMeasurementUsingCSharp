@@ -13,6 +13,7 @@ namespace QuantityMeasurementTest
     public class QuantityMeasurementTests
     {
         private Feet feetOne;
+        private Inch inch;
 
         /// <summary>
         /// functions that is performed just before each test method is called.
@@ -21,6 +22,7 @@ namespace QuantityMeasurementTest
         public void Setup()
         {
             this.feetOne = new Feet();
+            this.inch = new Inch();
         }
 
         /// <summary>
@@ -29,9 +31,9 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroFeetAndZeroFeet_ShouldReturnEqual()
         {
-            double value1 = this.feetOne.GetFeet(0.0);
-            double value2 = this.feetOne.GetFeet(0.0);
-            Assert.AreEqual(value1, value2);
+            double valueOne = this.feetOne.GetFeet(0.0);
+            double valueTwo = this.feetOne.GetFeet(0.0);
+            Assert.AreEqual(valueOne, valueTwo);
         }
 
         /// <summary>
@@ -79,9 +81,20 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenValue_WhenEqual_ShouldReturnEqual()
         {
-            double value1 = this.feetOne.GetFeet(12.0);
-            double value2 = this.feetOne.GetFeet(12.0);
-            Assert.AreEqual(value1, value2);
+            double feetOne = this.feetOne.GetFeet(12.0);
+            double feetTwo = this.feetOne.GetFeet(12.0);
+            Assert.AreEqual(feetOne, feetTwo);
+        }
+
+        /// <summary>
+        /// Given Zero Inch and Zero Inch Should Return Equal.
+        /// </summary>
+        [Test]
+        public void GivenZeroInchAndZeroInch_ShouldReturnEqual()
+        {
+            double valueOne = this.inch.GetInch(0.0);
+            double valueTwo = this.inch.GetInch(0.0);
+            Assert.AreEqual(valueOne, valueTwo);
         }
     }
 }

@@ -4,8 +4,6 @@
 
 namespace QuantityMeasurementProblem
 {
-    using System;
-
     /// <summary>
     /// Feet Class.
     /// </summary>
