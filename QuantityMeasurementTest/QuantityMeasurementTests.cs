@@ -105,5 +105,46 @@ namespace QuantityMeasurementTest
         {
             Assert.IsFalse(this.inch.Equals(null));
         }
+
+        /// <summary>
+        /// Perform Test For Equality Reference Check.
+        /// </summary>
+        [Test]
+        public void GivenSameReferenceForInch_ShouldReturnTrue()
+        {
+            Inch inchTwo = this.inch;
+            Assert.IsTrue(this.inch.Equals(inchTwo));
+        }
+
+        /// <summary>
+        /// Perform Test For Equality Type Check.
+        /// </summary>
+        [Test]
+        public void GivenInchObjects_WhenTypeEqual_ShouldReturnTrue()
+        {
+            Inch inchTwo = new Inch();
+            Assert.IsTrue(this.inch.Equals(inchTwo));
+        }
+
+        /// <summary>
+        /// Perform Test For Equality Type Check When Not Equal Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenInchAndQuantityMeasurementTestsObject_WhenTypeNotEqual_ShouldReturnFalse()
+        {
+            QuantityMeasurementTests quantityMeasurementTest = new QuantityMeasurementTests();
+            Assert.IsFalse(this.inch.Equals(quantityMeasurementTest));
+        }
+
+        /// <summary>
+        /// Perform Test To Value Check For Equality.
+        /// </summary>
+        [Test]
+        public void GivenValues_WhenEqual_ShouldReturnEqual()
+        {
+            double valueOne = this.inch.GetInch(12.0);
+            double valueTwo = this.inch.GetInch(12.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }

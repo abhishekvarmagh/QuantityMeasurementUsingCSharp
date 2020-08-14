@@ -31,6 +31,16 @@ namespace QuantityMeasurementProblem
                 return false;
             }
 
+            if (obj == this)
+            {
+                return true;
+            }
+
+            if (this.GetType() == obj.GetType())
+            {
+                return true;
+            }
+
             return base.Equals(obj);
         }
 
