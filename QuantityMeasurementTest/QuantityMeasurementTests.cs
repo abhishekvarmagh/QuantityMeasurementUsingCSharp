@@ -202,5 +202,93 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 1.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Given Zero Yard and Zero Yard Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenZeroYardAndZeroYard_WhenEqual_ShouldReturnEqual()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Yard, 0.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 0.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Given Zero Yard and One Yard Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentYardValues__ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Yard, 0.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 1.0);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given Zero Feet And Zero Yard Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenZeroFeetAndZeroYard_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 0.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 0.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given One Feet And One Yard Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenOneFeetAndOneYard_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 1.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 1.0);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given Zero Inch And Zero Yard Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenZeroInchAndZeroYard_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 0.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 0.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given One Inch And One Yard Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenOneInchAndOneYard_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 1.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 1.0);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given Thirty Six Feet And One Yard Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenThirtySixInchAndOneYard_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 36.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 1.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Comparsion Check Given One Yard And Three Feet Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenThirtyOneYardAndThreeFeet_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Yard, 1.0);
+            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 3.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }

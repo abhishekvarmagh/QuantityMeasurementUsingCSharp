@@ -10,6 +10,8 @@ namespace QuantityMeasurementProblem
 
         public static readonly UnitType Inch = new UnitType(1);
 
+        public static readonly UnitType Yard = new UnitType(36);
+
         public int value;
 
         public UnitType(int value)
