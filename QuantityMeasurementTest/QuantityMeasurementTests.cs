@@ -52,5 +52,25 @@ namespace QuantityMeasurementTest
             Feet feetTwo = this.feetOne;
             Assert.IsTrue(this.feetOne.Equals(feetTwo));
         }
+
+        /// <summary>
+        /// Perform Test For Equality Type Check.
+        /// </summary>
+        [Test]
+        public void GivenFeetObjects_WhenTypeEqual_ShouldReturnTrue()
+        {
+            Feet feetTwo = new Feet();
+            Assert.IsTrue(this.feetOne.Equals(feetTwo));
+        }
+
+        /// <summary>
+        /// Perform Test For Equality Type Check When Not Equal Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenFeetAndQuantityMeasurementTestsObject_WhenTypeNotEqual_ShouldReturnFalse()
+        {
+            QuantityMeasurementTests quantityMeasurementTest = new QuantityMeasurementTests();
+            Assert.IsFalse(this.feetOne.Equals(quantityMeasurementTest));
+        }
     }
 }
