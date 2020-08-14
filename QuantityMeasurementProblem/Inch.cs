@@ -18,5 +18,29 @@ namespace QuantityMeasurementProblem
         {
             return inch;
         }
+
+        /// <summary>
+        /// Method For Equality Check.
+        /// </summary>
+        /// <param name="obj">Reference Of Object.</param>
+        /// <returns>True Or False.</returns>
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            return base.Equals(obj);
+        }
+
+        /// <summary>
+        /// Overiding GetHashCode Method.
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

@@ -96,5 +96,14 @@ namespace QuantityMeasurementTest
             double valueTwo = this.inch.GetInch(0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Perform Test For Equality Null Check.
+        /// </summary>
+        [Test]
+        public void GivenNullForInch_ShouldReturnFalse()
+        {
+            Assert.IsFalse(this.inch.Equals(null));
+        }
     }
 }
