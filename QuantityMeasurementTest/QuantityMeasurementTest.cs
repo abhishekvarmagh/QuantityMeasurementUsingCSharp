@@ -20,5 +20,11 @@ namespace QuantityMeasurementTest
             double value2 = feet.GetFeet(0.0);
             Assert.AreEqual(value1, value2);
         }
+
+        [Test]
+        public void givenReferenceForFeet_ShouldReturnEqual()
+        {
+            Assert.IsFalse(feet.Equals(null));
+        }
     }
 }
