@@ -1,18 +1,24 @@
-using NUnit.Framework;
-
 namespace QuantityMeasurementTest
 {
+    using NUnit.Framework;
+    using QuantityMeasurementProblem;
     public class Tests
     {
+
+        Feet feet;
+
         [SetUp]
         public void Setup()
         {
+            feet = new Feet();
         }
 
         [Test]
-        public void Test1()
+        public void givenZeroFeetAndZeroFeet_ShouldReturnEqual()
         {
-            Assert.Pass();
+            double value1 = feet.GetFeet(0.0);
+            double value2 = feet.GetFeet(0.0);
+            Assert.AreEqual(value1, value2);
         }
     }
 }
