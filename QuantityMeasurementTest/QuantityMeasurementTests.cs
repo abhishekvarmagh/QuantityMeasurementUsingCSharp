@@ -13,8 +13,7 @@ namespace QuantityMeasurementTest
     public class QuantityMeasurementTests
     {
 
-        private QuantityMeasurement quantityMeasurementOne;
-        private QuantityMeasurement quantityMeasurementTwo;
+        private QuantityMeasurement quantityMeasurement;
 
         /// <summary>
         /// functions that is performed just before each test method is called.
@@ -22,8 +21,7 @@ namespace QuantityMeasurementTest
         [SetUp]
         public void Setup()
         {
-            this.quantityMeasurementOne = new QuantityMeasurement();
-            this.quantityMeasurementTwo = new QuantityMeasurement();
+            this.quantityMeasurement = new QuantityMeasurement();
         }
 
         /// <summary>
@@ -32,8 +30,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroFeetAndZeroFeet_ShouldReturnEqual()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Feet, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -43,7 +41,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenNullForFeet_ShouldReturnFalse()
         {
-            Assert.IsFalse(this.quantityMeasurementOne.Equals(null));
+            Assert.IsFalse(this.quantityMeasurement.Equals(null));
         }
 
         /// <summary>
@@ -52,8 +50,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenSameReferenceForFeet_ShouldReturnTrue()
         {
-            QuantityMeasurement quantityMeasurement = this.quantityMeasurementOne;
-            Assert.IsTrue(this.quantityMeasurementOne.Equals(quantityMeasurement));
+            QuantityMeasurement quantityMeasurement = this.quantityMeasurement;
+            Assert.IsTrue(this.quantityMeasurement.Equals(quantityMeasurement));
         }
 
         /// <summary>
@@ -62,7 +60,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenFeetObjects_WhenTypeEqual_ShouldReturnTrue()
         {
-            Assert.IsTrue(this.quantityMeasurementOne.Equals(this.quantityMeasurementTwo));
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            Assert.IsTrue(this.quantityMeasurement.Equals(quantityMeasurement));
         }
 
         /// <summary>
@@ -72,7 +71,7 @@ namespace QuantityMeasurementTest
         public void GivenFeetAndQuantityMeasurementTestsObject_WhenTypeNotEqual_ShouldReturnFalse()
         {
             QuantityMeasurementTests quantityMeasurementTest = new QuantityMeasurementTests();
-            Assert.IsFalse(this.quantityMeasurementOne.Equals(quantityMeasurementTest));
+            Assert.IsFalse(this.quantityMeasurement.Equals(quantityMeasurementTest));
         }
 
         /// <summary>
@@ -81,8 +80,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenValue_WhenEqual_ShouldReturnEqual()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Feet, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -92,8 +91,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroInchAndZeroInch_ShouldReturnEqual()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Inch, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -103,7 +102,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenNullForInch_ShouldReturnFalse()
         {
-            Assert.IsFalse(this.quantityMeasurementOne.Equals(null));
+            Assert.IsFalse(this.quantityMeasurement.Equals(null));
         }
 
         /// <summary>
@@ -112,8 +111,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenSameReferenceForInch_ShouldReturnTrue()
         {
-            QuantityMeasurement quantityMeasurement = this.quantityMeasurementOne;
-            Assert.IsTrue(this.quantityMeasurementOne.Equals(quantityMeasurement));
+            QuantityMeasurement quantityMeasurement = this.quantityMeasurement;
+            Assert.IsTrue(this.quantityMeasurement.Equals(quantityMeasurement));
         }
 
         /// <summary>
@@ -122,7 +121,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenInchObjects_WhenTypeEqual_ShouldReturnTrue()
         {
-            Assert.IsTrue(this.quantityMeasurementOne.Equals(this.quantityMeasurementTwo));
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            Assert.IsTrue(this.quantityMeasurement.Equals(quantityMeasurement));
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace QuantityMeasurementTest
         public void GivenInchAndQuantityMeasurementTestsObject_WhenTypeNotEqual_ShouldReturnFalse()
         {
             QuantityMeasurementTests quantityMeasurementTest = new QuantityMeasurementTests();
-            Assert.IsFalse(this.quantityMeasurementOne.Equals(quantityMeasurementTest));
+            Assert.IsFalse(this.quantityMeasurement.Equals(quantityMeasurementTest));
         }
 
         /// <summary>
@@ -141,8 +141,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenValues_WhenEqual_ShouldReturnEqual()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Inch, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -154,8 +154,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroInchAndZeroFeet_WhenZero_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Inch, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -165,8 +165,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenOneInchAndOneFeet_WhenEqualInLength_ShouldReturnFalse()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 1.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 1.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Feet, 1.0);
             Assert.AreNotEqual(valueOne, valueTwo);
         }
 
@@ -176,8 +176,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenOneFeetAndOneFeet_WhenEqualInLength_ShouldReturnFalse()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 1.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 1.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Inch, 1.0);
             Assert.AreNotEqual(valueOne, valueTwo);
         }
 
@@ -187,8 +187,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenOneFeetAndTwelveInch_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 1.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Inch, 12.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Inch, 12.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -198,8 +198,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenTwelveInchAndOneFeet_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 12.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 1.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 12.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Feet, 1.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -209,8 +209,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroYardAndZeroYard_WhenEqual_ShouldReturnEqual()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Yard, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Yard, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Yard, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -220,8 +220,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenTwoDifferentYardValues__ShouldReturnFalse()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Yard, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 1.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Yard, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Yard, 1.0);
             Assert.AreNotEqual(valueOne, valueTwo);
         }
 
@@ -231,8 +231,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroFeetAndZeroYard_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Yard, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -242,8 +242,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenOneFeetAndOneYard_ShouldReturnFalse()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Feet, 1.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 1.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Yard, 1.0);
             Assert.AreNotEqual(valueOne, valueTwo);
         }
 
@@ -253,8 +253,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroInchAndZeroYard_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Yard, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -264,8 +264,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenOneInchAndOneYard_ShouldReturnFalse()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 1.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 1.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Yard, 1.0);
             Assert.AreNotEqual(valueOne, valueTwo);
         }
 
@@ -275,8 +275,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenThirtySixInchAndOneYard_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 36.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Yard, 1.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 36.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Yard, 1.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -286,8 +286,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenThirtyOneYardAndThreeFeet_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Yard, 1.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Feet, 3.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Yard, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Feet, 3.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -297,8 +297,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroCentimeterAndZeroCentimeter_WhenEqual_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Cm, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Cm, 0.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Cm, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Cm, 0.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
 
@@ -308,8 +308,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenZeroCentimeterAndOneCentimeter_WhenNotEqual_ShouldReturnFalse()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Cm, 0.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Cm, 1.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Cm, 0.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Cm, 1.0);
             Assert.AreNotEqual(valueOne, valueTwo);
         }
 
@@ -319,9 +319,53 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenTwoInchAndFiveCentimeter_ShouldReturnTrue()
         {
-            double valueOne = this.quantityMeasurementOne.UnitConversion(UnitType.Inch, 2.0);
-            double valueTwo = this.quantityMeasurementTwo.UnitConversion(UnitType.Cm, 5.0);
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 2.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Cm, 5.0);
             Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Given Two Inch and Two Inch When Added Should Return Four Inch.
+        /// </summary>
+        [Test]
+        public void GivenTwoInchAndTwoInch_WhenAdded_ShouldReturnFourInch()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 2.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Inch, 2.0);
+            Assert.AreEqual(4.0, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
+        }
+
+        /// <summary>
+        /// Given One Feet and Two Inch When Added Should Return Fourteen Inch.
+        /// </summary>
+        [Test]
+        public void GivenOneFeetAndTwoInch_WhenAdded_ShouldReturnFourInch()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Inch, 2.0);
+            Assert.AreEqual(14.0, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
+        }
+
+        /// <summary>
+        /// Given One Feet and One Feet When Added Should Return Twenty Four Inch.
+        /// </summary>
+        [Test]
+        public void GivenOneFeetAndOneFeet_WhenAdded_ShouldReturnTwentyFourInch()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Feet, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Feet, 1.0);
+            Assert.AreEqual(24.0, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
+        }
+
+        /// <summary>
+        /// Given Two Inch and Two Point Five Centimeter When Added Should Return Three Inch.
+        /// </summary>
+        [Test]
+        public void GivenTwoInchAndTwoPointFiveCentimeter_WhenAdded_ShouldReturnThreeInch()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Inch, 2.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Cm, 2.5);
+            Assert.AreEqual(3.0, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
         }
     }
 }

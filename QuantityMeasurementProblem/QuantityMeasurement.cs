@@ -14,6 +14,11 @@ namespace QuantityMeasurementProblem
             return value * units.value;
         }
 
+        public double UnitAddition(double valueOne, double valueTwo)
+        {
+            return valueOne + valueTwo;
+        }
+
         /// <summary>
         /// Method For Equality Check.
         /// </summary>
