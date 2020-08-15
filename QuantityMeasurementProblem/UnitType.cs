@@ -14,6 +14,12 @@ namespace QuantityMeasurementProblem
 
         public static readonly UnitType Cm = new UnitType(0.4);
 
+        public static readonly UnitType Litre = new UnitType(1.0);
+
+        public static readonly UnitType Gallon = new UnitType(3.78);
+
+        public static readonly UnitType Millilitre = new UnitType(0.001);
+
         public double value;
 
         public UnitType(double value)
