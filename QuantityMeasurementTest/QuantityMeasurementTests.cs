@@ -389,5 +389,27 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Millilitre, 1000.0);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Given One Gallon and Three Point Seven Eight Litre When Added Should Return Seven Point Five Six Litre.
+        /// </summary>
+        [Test]
+        public void GivenOneGallonAndThreePointSevenEightLitre_WhenAdded_ShouldReturnSevenPointSixLitre()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Gallon, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Litre, 3.78);
+            Assert.AreEqual(7.56, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
+        }
+
+        /// <summary>
+        /// Given One Litre and Thousand Millilitre When Added Should Return Two Litre.
+        /// </summary>
+        [Test]
+        public void GivenOneLitreAndThousandMillilitre_WhenAdded_ShouldReturnTwoLitre()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Litre, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Millilitre, 1000.0);
+            Assert.AreEqual(2.0, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
+        }
     }
 }
