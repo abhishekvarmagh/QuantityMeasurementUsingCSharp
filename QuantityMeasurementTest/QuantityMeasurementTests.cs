@@ -444,5 +444,16 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Gram, 1000.0);
             Assert.AreEqual(1001.0, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
         }
+
+        /// <summary>
+        /// Given Two One Two Fahrehneit And Hundred Celsius When Equal Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenTwoOneTwoFahrehneitAndHundredCelsius_WhenEqual_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Fahrehneit, 212.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Celsius, 100.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }

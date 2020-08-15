@@ -5,15 +5,27 @@
 namespace QuantityMeasurementProblem
 {
     /// <summary>
-    /// Length Class.
+    /// Quantity Measurement Class.
     /// </summary>
     public class QuantityMeasurement
     {
+        /// <summary>
+        /// Get Unit Converted Value.
+        /// </summary>
+        /// <param name="units">Unit Type.</param>
+        /// <param name="value">Value To Be Converted.</param>
+        /// <returns>Return Value Which Is Converted.</returns>
         public double UnitConversion(UnitType units, double value)
         {
-            return value * units.value;
+            return units == UnitType.Celsius ? (value * units.value) + 32 : value * units.value;
         }
 
+        /// <summary>
+        /// Get Addition Of Converted Value.
+        /// </summary>
+        /// <param name="valueOne">Converted Value One.</param>
+        /// <param name="valueTwo">Converted Value Two.</param>
+        /// <returns>Added Converted Value.</returns>
         public double UnitAddition(double valueOne, double valueTwo)
         {
             return valueOne + valueTwo;
@@ -45,7 +57,7 @@ namespace QuantityMeasurementProblem
         }
 
         /// <summary>
-        /// Overiding GetHashCode Method.
+        /// Overriding GetHashCode Method.
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
