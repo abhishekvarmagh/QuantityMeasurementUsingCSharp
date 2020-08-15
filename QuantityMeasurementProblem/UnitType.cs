@@ -20,6 +20,12 @@ namespace QuantityMeasurementProblem
 
         public static readonly UnitType Millilitre = new UnitType(0.001);
 
+        public static readonly UnitType Kilogram = new UnitType(1.0);
+
+        public static readonly UnitType Gram = new UnitType(0.001);
+
+        public static readonly UnitType Tonne = new UnitType(1000.0);
+
         public double value;
 
         public UnitType(double value)

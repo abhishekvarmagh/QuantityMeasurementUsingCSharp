@@ -411,5 +411,38 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Millilitre, 1000.0);
             Assert.AreEqual(2.0, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
         }
+
+        /// <summary>
+        /// Given One Kilogram And Thousand Gram Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenOneKilogramAndThousandGram_WhenEqual_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Kilogram, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Gram, 1000.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Given One Tonne And Thousand Kilogram Should Return True.
+        /// </summary>
+        [Test]
+        public void GivenOneTonneAndThousandKilogram_WhenEqual_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Tonne, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Kilogram, 1000.0);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Given One Tonne And Thousand Gram When Added Should Return One Thousand And One Kilogram.
+        /// </summary>
+        [Test]
+        public void GivenOneTonneAndThousandGram_WhenAdded_ShouldReturnOneThousandAndOneKilogram()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(UnitType.Tonne, 1.0);
+            double valueTwo = this.quantityMeasurement.UnitConversion(UnitType.Gram, 1000.0);
+            Assert.AreEqual(1001.0, this.quantityMeasurement.UnitAddition(valueOne, valueTwo));
+        }
     }
 }
